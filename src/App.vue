@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <Calculator></Calculator>
+    <Calculator @showResult="showPrice"></Calculator>
     <Price></Price>
   </div>
 </template>
@@ -16,6 +16,11 @@ export default {
     Header,
     Calculator,
     Price,
+  },
+  methods: {
+    showPrice(price,people) {
+      console.log(Math.round(price/people));
+    }
   }
 }
 </script>
@@ -31,6 +36,7 @@ export default {
     background: #a69fdb;
     font-family: 'LAB디지털';
     color: #fff;
+        text-shadow: -1px -1px 0px #666;
   }
   #app {
     margin-top: 20vh;

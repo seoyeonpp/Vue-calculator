@@ -20,5 +20,6 @@
    line-height: 10vh;
    color: #fff;
    letter-spacing: 5px;
+    text-shadow: -1px -1px 0px #666;
  }
 </style>
