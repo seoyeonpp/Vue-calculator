@@ -2,16 +2,16 @@
     <div id="calc">
         <section>
             <label for="price">총 금액: </label>
-            <input type="number" id="price" v-model="totalPrice">
+            <input type="number" id="price" min="0" v-model="totalPrice">
         </section>
 
         <section>
             <label for="people">인원 수: </label>
-            <input type="number" id="people" v-model="totalPeople">
+            <input type="number" id="people" min="0" v-model="totalPeople">
         </section>
 
         <button @click="clickBtn">더치페이 하기</button>
-        <button @click="plus">0.1 더하기</button>
+        <!-- <button @click="plus">0.1 더하기</button> -->
     </div>
 </template>
 
@@ -32,10 +32,10 @@ export default {
         clickBtn() {
             this.$emit('showResult',this.totalPrice,this.totalPeople);
         },
-        plus() {
-            this.count += 0.1;
-            console.log(this.count.toFixed(1));
-        }
+        // plus() {
+        //     this.count += 0.1;
+        //     console.log(this.count.toFixed(1));
+        // }
     }
 }
 </script>

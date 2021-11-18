@@ -1,12 +1,17 @@
 <template>
   <div>
-      <p>결과값</p>
+      <p>{{showResult}}</p>
   </div>
 </template>
 
 <script>
 export default {
-
+    props: {
+        showResult:{
+            type: Number,
+            required: true,
+        }
+    }
 }
 </script>
 

@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <Calculator @showResult="showPrice"></Calculator>
-    <Price></Price>
+    <Price :showResult='resultPrice'></Price>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ import Calculator from './components/Calculator.vue';
 import Price from './components/Price.vue';
 
 export default {
+  data () {
+    return {
+      resultPrice: 0
+    }
+  },
   components: {
     Header,
     Calculator,
@@ -19,9 +24,11 @@ export default {
   },
   methods: {
     showPrice(price,people) {
-      console.log(Math.round(price/people));
+      // console.log(Math.round(price/people));
+      this.resultPrice = Math.round(price/people);
     }
-  }
+  },
+  
 }
 </script>
 
